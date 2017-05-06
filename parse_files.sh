@@ -6,7 +6,7 @@ for gender in {M,F}; do
       name=$(echo ${filename} | sed -n 's/names\/[A-Z]\/[A-Z]\/\(.*\)-stats.txt/\1/p')
       year=$(tail ${filename} -n +2 | cut -f1 -d,)
       echo $name $year
-      printf '%s\n' $NAME $YEAR >> name_ages.csv
+      echo $name $year >> name_ages.tsv
     done
   done
 done
